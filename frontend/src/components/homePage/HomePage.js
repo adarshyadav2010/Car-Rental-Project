@@ -11,10 +11,10 @@ export default function HomePage(){
             <HomeNav/>
             <div className="page-design">
                 <div className="page-content">
-                    <h3>Rent a Ride !!! Roam awide <br/>
+                    <h2>Rent a Ride !!! Roam awide <br/>
                         Enjoy your holidays with our wheels<br/>
                         Make your journey Enjoyable
-                    </h3>
+                    </h2>
                     <div className="click-control">
                         <div className="controls">
                             
