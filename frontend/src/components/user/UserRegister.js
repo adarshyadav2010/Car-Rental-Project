@@ -3,6 +3,8 @@ import React, { useState } from 'react'
 import { ToastContainer, toast } from "react-toastify"
 import 'react-toastify/dist/ReactToastify.css';
 import '../styles/styles.css';
+import UserLogin from './UserLogin';
+import { Link } from 'react-router-dom';
 
 function UserRegister() {
 
@@ -74,7 +76,7 @@ function UserRegister() {
 
     return (
         <>
-            <div className="form-card" id='form'>
+            <div className="form-card" id='form type'>
 
                 <form onSubmit={onSubmitData}>
                     <h4 className='sign-up'>Register in your Account</h4>
@@ -90,7 +92,7 @@ function UserRegister() {
                     <input type="Password" className='input-field' onChange={handleInput} placeholder='Confirm Password' name='Confirm_Password' value={inputdata.Confirm_Password} />
 
                     <div className="login-signup">
-                        <button>Sign in</button>
+                        {/* <span >Sign in</span> */}
                         <button className="save-details" type='submit'>Register</button>
                         
                     </div>

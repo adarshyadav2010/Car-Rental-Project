@@ -92,7 +92,7 @@ function AdminRegister() {
                     <input type="Password" className='input-field' onChange={e => setInputData({ ...inputdata, Confirm_Password: e.target.value })} value={inputdata.Confirm_Password} placeholder='Confirm Password' name='Confirm_Password' />
 
                     <div className="login-signup">
-                        <button>Sign in</button>
+                        {/* <button>Sign in</button> */}
                         <button type='submit' className="save-details">Register</button>
                     </div>
                 </form>

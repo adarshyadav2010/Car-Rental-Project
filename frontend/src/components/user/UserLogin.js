@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react'
 import { useNavigate } from "react-router-dom"
 import { ToastContainer, toast } from "react-toastify"
 import 'react-toastify/dist/ReactToastify.css';
+import UserRegister from './UserRegister';
 
 function UserLogin() {
     const [inputdata, setInputData] = useState({
@@ -56,7 +57,7 @@ function UserLogin() {
 
                     <input type="Password" onChange={handlePasswordChange} placeholder='Password' className='input-field'/>
                     <div className="login-signup">
-                        <button>Create Account</button>
+                        {/* <a href={'#type'}><span>Create Account</span></a> */}
                         <button type='submit' onClick={onSubmitData} className="save-details">Sign In</button>
                     </div>
                 </form>

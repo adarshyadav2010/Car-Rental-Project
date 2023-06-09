@@ -62,7 +62,7 @@ function AdminLogin() {
                     <input type="Password" onChange={handlePasswordChange} placeholder='Password' className='input-field' />
 
                     <div className="login-signup">
-                        <button>Create Account</button>
+                        {/* <button>Create Account</button> */}
                         <button type='submit' onClick={onSubmitData} className="save-details">Sign In</button>
                     </div>
                 </form>

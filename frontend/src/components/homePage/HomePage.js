@@ -8,7 +8,8 @@ import AdminLogin from "../admin/AdminLogin";
 
 
 export default function HomePage(){
-    const [formType, setFormType]  = useState('Rent A Car');
+    const [formType, setFormType]  = useState('Rent a car');
+    
     return (
         <div className='home-container'>
             <HomeNav/>
@@ -20,35 +21,36 @@ export default function HomePage(){
                     </h2>
                     <div className="click-control">
                         <div className="controls">
-                            
+                            <span>User: </span>
                             <div>
-                                <span>User: </span>
                                 {/* <button className="save-details">Register</button> */}
                                 <button className="save-details" onClick={()=>{setFormType(<UserLogin/>)}}>Login</button>
+                                <button className="save-details" onClick={()=>{setFormType(<UserRegister/>)}}>Register</button>
                             </div>
                             
                         </div>
                         <div className="controls">
-                            
+                            <span>Admin: </span>
                             <div>
-                                <span>Admin: </span>
                                 {/* <button className="save-details">Register</button> */}
-                                <button className="save-details">Login</button>
+                                <button className="save-details" onClick={()=>{setFormType(<AdminLogin/>)}}>Login</button>
+                                <button className="save-details" onClick={()=>{setFormType(<AdminRegister/>)}}>Register</button>
                             </div>
                         </div>
                     </div>
                 </div>
-                {/* <div>
-                    {formType}
-                </div> */}
-                <div className='card-div'> 
-                    {/* <UserRegister/> */}
-                    {/* <UserLogin/> */}
-                    {/* <AdminRegister/> */}
-                    {/* <AdminLogin/> */}
+                <div className="card-div">
                     {formType}
                 </div>
+                
+                
             </div>
         </div>
     )
 }
+
+{/* <UserLogin/> */}
+                        {/* <AdminRegister/> */}
+                        {/* <AdminLogin/> */}
+                        {/* {formType} */}
+                        {/* <FormType form={formType}/> */}
