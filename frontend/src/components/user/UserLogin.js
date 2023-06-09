@@ -56,7 +56,7 @@ function UserLogin() {
 
                     <input type="Password" onChange={handlePasswordChange} placeholder='Password' className='input-field'/>
                     <div className="login-signup">
-                        <div><span>Create Account</span></div>
+                        <button>Create Account</button>
                         <button type='submit' onClick={onSubmitData} className="save-details">Sign In</button>
                     </div>
                 </form>

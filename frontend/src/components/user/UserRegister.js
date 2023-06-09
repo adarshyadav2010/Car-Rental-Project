@@ -90,7 +90,7 @@ function UserRegister() {
                     <input type="Password" className='input-field' onChange={handleInput} placeholder='Confirm Password' name='Confirm_Password' value={inputdata.Confirm_Password} />
 
                     <div className="login-signup">
-                        <div><span>Sign in</span></div>
+                        <button>Sign in</button>
                         <button className="save-details" type='submit'>Register</button>
                         
                     </div>

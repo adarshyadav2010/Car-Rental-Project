@@ -1,11 +1,14 @@
-import React from "react";
+import React, {useState} from "react";
 import { Link } from 'react-router-dom';
 import HomeNav from "../navbar/HomeNav";
 import UserRegister from "../user/UserRegister";
 import UserLogin from "../user/UserLogin";
+import AdminRegister from "../admin/AdminRegister";
+import AdminLogin from "../admin/AdminLogin";
 
 
 export default function HomePage(){
+    const [formType, setFormType]  = useState('Rent A Car');
     return (
         <div className='home-container'>
             <HomeNav/>
@@ -21,7 +24,7 @@ export default function HomePage(){
                             <div>
                                 <span>User: </span>
                                 {/* <button className="save-details">Register</button> */}
-                                <button className="save-details">Login</button>
+                                <button className="save-details" onClick={()=>{setFormType(<UserLogin/>)}}>Login</button>
                             </div>
                             
                         </div>
@@ -35,9 +38,15 @@ export default function HomePage(){
                         </div>
                     </div>
                 </div>
+                {/* <div>
+                    {formType}
+                </div> */}
                 <div className='card-div'> 
                     {/* <UserRegister/> */}
-                    <UserLogin/>
+                    {/* <UserLogin/> */}
+                    {/* <AdminRegister/> */}
+                    {/* <AdminLogin/> */}
+                    {formType}
                 </div>
             </div>
         </div>

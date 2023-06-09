@@ -81,17 +81,20 @@ function AdminRegister() {
                     <h4 className='sign-up'>Register your Admin Account</h4>
                     <h6 style={{ color: "red" }}>{err}</h6>
                     
-                    <input type="text" name="Name" className='login-admin-the-css-for-form' onChange={e => setInputData({ ...inputdata, Name: e.target.value })} value={inputdata.Name} placeholder='Name' />
+                    <input type="text" name="Name" className='input-field' onChange={e => setInputData({ ...inputdata, Name: e.target.value })} value={inputdata.Name} placeholder='Name' />
 
-                    <input type="Email" name="Email" className='login-admin-the-css-for-form' onChange={e => setInputData({ ...inputdata, Email: e.target.value })} value={inputdata.Email} placeholder='Email' />
+                    <input type="Email" name="Email" className='input-field' onChange={e => setInputData({ ...inputdata, Email: e.target.value })} value={inputdata.Email} placeholder='Email' />
 
-                    <input type="tel" name="Contact" className='login-admin-the-css-for-form' onChange={e => setInputData({ ...inputdata, Contact: e.target.value })} value={inputdata.Contact} placeholder='Contact' />
+                    <input type="tel" name="Contact" className='input-field' onChange={e => setInputData({ ...inputdata, Contact: e.target.value })} value={inputdata.Contact} placeholder='Contact' />
 
-                    <input type="Password" className='login-admin-the-css-for-form' onChange={e => setInputData({ ...inputdata, Password: e.target.value })} value={inputdata.Password} placeholder='Password' name='Password' />
+                    <input type="Password" className='input-field' onChange={e => setInputData({ ...inputdata, Password: e.target.value })} value={inputdata.Password} placeholder='Password' name='Password' />
 
-                    <input type="Password" className='login-admin-the-css-for-form' onChange={e => setInputData({ ...inputdata, Confirm_Password: e.target.value })} value={inputdata.Confirm_Password} placeholder='Confirm Password' name='Confirm_Password' />
+                    <input type="Password" className='input-field' onChange={e => setInputData({ ...inputdata, Confirm_Password: e.target.value })} value={inputdata.Confirm_Password} placeholder='Confirm Password' name='Confirm_Password' />
 
-                    <div id="button-container-in-admin-login-page">  <button type='submit' id="button-container-in-admin-login-page-btn">Submit</button></div>
+                    <div className="login-signup">
+                        <button>Sign in</button>
+                        <button type='submit' className="save-details">Register</button>
+                    </div>
                 </form>
                 <ToastContainer
                     position="top-center"
