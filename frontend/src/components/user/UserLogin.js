@@ -41,7 +41,7 @@ function UserLogin() {
             toast.error("Password is too Long")
         }
         else {
-
+            navigate('/user-page')
         }
 
     }

@@ -7,6 +7,7 @@ import UserRegister from "../user/UserRegister";
 import UserLogin from "../user/UserLogin";
 import HomeCard from "../homePage/HomeCard";
 import AdminPage from "../admin/adminPage/AdminPage";
+import UserPage from "../user/userPage/UserPage";
 
 
 
@@ -26,6 +27,7 @@ export default function AppRouter() {
                 <Route path="register" element={<AdminRegister/>} />
             </Route>
             <Route path='/admin-page' element={<AdminPage/>}/>
+            <Route path='/user-page' element={<UserPage/>}/>
         </Routes>
         
 

@@ -96,7 +96,7 @@ h2{
     display: flex;
     justify-content: space-between;
     background-color: white;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2)
+    /* box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2) */
 }
 .admin-img {
     height: 100%;
@@ -116,4 +116,69 @@ h2{
     background-color: rgb(212, 210, 210);
     color: black;
     font-weight: bold;
+}
+
+
+/* user page */
+
+/* user nav */
+
+#user-nav{
+    height: 12vh;
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2)
+}
+.user-img {
+    height: 100%;
+    width: 30%;
+}
+
+.user-page{
+    padding: 0px 50px 0px 50px;
+}
+
+.user-funcs{
+    display: flex;
+}
+
+.user-logout{
+    margin: 20px;
+}
+
+.text{
+    text-decoration: none;
+}
+
+.user-card-div{
+    border: 1px solid gray;
+    border-radius: 10px;
+    width: 300px;
+    background-color: white;
+    padding: 20px;
+    margin-left: 50px;
+}
+
+.input-field1{
+    width: 85%;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.check-pos{
+    float: right;
+}
+
+.check-btn{
+    border-radius: 40px;
+    margin-top: 15px;
+    padding: 10px 20px;
+}
+
+.quote-style{
+    color: rgb(124, 123, 123);
+    font-family: cursive;
+    font-size: medium;
 }
