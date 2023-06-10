@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 function AdminLogin() {
 
-    const Navigate = useNavigate();
+    const navigate = useNavigate();
     const [inputdata, setInputData] = useState({
         Email: "",
         Password: ""
@@ -47,7 +47,7 @@ function AdminLogin() {
             toast.error("Password is too Long")
         }
         else {
-
+            navigate('/admin-page')
         }
     }
 

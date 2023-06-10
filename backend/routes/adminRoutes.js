@@ -4,7 +4,7 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 require('dotenv').config();
 
-adminRouter.post('/signup', async(req,res)=>{
+adminRouter.post('/register', async(req,res)=>{
     try{
         const {Name, Email, Password, Contact} = req.body;
         let existingAdmin = await adminModel.findOne({ Email });

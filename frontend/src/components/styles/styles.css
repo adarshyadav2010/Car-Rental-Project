@@ -24,6 +24,7 @@
 
 .page-design{
     background-image: url('../images/backgroundhome.jpg');
+    filter:saturate(40%);
     height: 100vh;
     background-size: cover;
     display: flex;
@@ -84,4 +85,35 @@ h2{
     color: white;
     padding: 5px;
     border-radius: 3px;
+}
+
+/* adminpagestyle */
+
+/* admin nav */
+
+#admin-nav{
+    height: 12vh;
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2)
+}
+.admin-img {
+    height: 100%;
+    width: 30%;
+}
+
+.admin-page{
+    padding: 0px 50px 0px 50px;
+}
+
+.admin-logout{
+    margin: 20px;
+}
+
+.log-out{
+    padding: 5px;
+    background-color: rgb(212, 210, 210);
+    color: black;
+    font-weight: bold;
 }
