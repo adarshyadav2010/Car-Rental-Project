@@ -11,7 +11,7 @@ export default function UserPage(){
       }
       const save = (e)=>{
         e.preventDefault();
-        
+        navigate('/orderpage')
       }
     return(
         <div className='home-container'>
@@ -24,6 +24,10 @@ export default function UserPage(){
                             Bag the trip of Moments && Memories Yaayy (^ _ *)
                         </h3>
                         <form id="forms" onSubmit={save}>
+                            <input type="text" className="input-field" placeholder="Origin Name" required name="origin" onChange={handleInput}/>
+
+                            <input type="text" className="input-field" placeholder="Destination Name" required name="destination" onCanPlay={handleInput}/>
+
                             <label for="start-date">Start Date:</label>
                             
                             <input id="start-date" type="date" className="input-field1" placeholder='Starting Date' required name="startDate" onChange={handleInput}/>
