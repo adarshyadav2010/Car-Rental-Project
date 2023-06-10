@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react'
 import { ToastContainer, toast } from "react-toastify"
 import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate } from 'react-router-dom';
-
+import { Link } from 'react-router-dom';
 
 function AdminLogin() {
 
@@ -62,7 +62,7 @@ function AdminLogin() {
                     <input type="Password" onChange={handlePasswordChange} placeholder='Password' className='input-field' />
 
                     <div className="login-signup">
-                        {/* <button>Create Account</button> */}
+                        <Link to='/admin/register' ><span >Create Account</span></Link>
                         <button type='submit' onClick={onSubmitData} className="save-details">Sign In</button>
                     </div>
                 </form>

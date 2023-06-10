@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react'
 import { useNavigate } from "react-router-dom"
 import { ToastContainer, toast } from "react-toastify"
 import 'react-toastify/dist/ReactToastify.css';
-
+import { Link } from 'react-router-dom';
 
 
 function AdminRegister() {
@@ -92,7 +92,7 @@ function AdminRegister() {
                     <input type="Password" className='input-field' onChange={e => setInputData({ ...inputdata, Confirm_Password: e.target.value })} value={inputdata.Confirm_Password} placeholder='Confirm Password' name='Confirm_Password' />
 
                     <div className="login-signup">
-                        {/* <button>Sign in</button> */}
+                    <Link to='/admin/login' ><span >Sign In</span></Link>
                         <button type='submit' className="save-details">Register</button>
                     </div>
                 </form>

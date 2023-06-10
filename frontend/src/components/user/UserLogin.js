@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom"
 import { ToastContainer, toast } from "react-toastify"
 import 'react-toastify/dist/ReactToastify.css';
 import UserRegister from './UserRegister';
-
+import { Link } from 'react-router-dom';
 function UserLogin() {
     const [inputdata, setInputData] = useState({
         Email: "",
@@ -57,7 +57,7 @@ function UserLogin() {
 
                     <input type="Password" onChange={handlePasswordChange} placeholder='Password' className='input-field'/>
                     <div className="login-signup">
-                        {/* <a href={'#type'}><span>Create Account</span></a> */}
+                        <Link to='/user/register' ><span >Create Account</span></Link>
                         <button type='submit' onClick={onSubmitData} className="save-details">Sign In</button>
                     </div>
                 </form>

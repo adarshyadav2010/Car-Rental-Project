@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import { Link } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 import HomeNav from "../navbar/HomeNav";
 import UserRegister from "../user/UserRegister";
 import UserLogin from "../user/UserLogin";
@@ -8,7 +9,7 @@ import AdminLogin from "../admin/AdminLogin";
 
 
 export default function HomePage(){
-    const [formType, setFormType]  = useState('Rent a car');
+    // const [formType, setFormType]  = useState('Rent a car');
     
     return (
         <div className='home-container'>
@@ -24,8 +25,8 @@ export default function HomePage(){
                             <span>User: </span>
                             <div>
                                 {/* <button className="save-details">Register</button> */}
-                                <button className="save-details" onClick={()=>{setFormType(<UserLogin/>)}}>Login</button>
-                                <button className="save-details" onClick={()=>{setFormType(<UserRegister/>)}}>Register</button>
+                                <Link to='/user/login'><button className="save-details">Login</button></Link>
+                                {/* <button className="save-details" onClick={()=>{setFormType(<UserRegister/>)}}>Register</button> */}
                             </div>
                             
                         </div>
@@ -33,14 +34,14 @@ export default function HomePage(){
                             <span>Admin: </span>
                             <div>
                                 {/* <button className="save-details">Register</button> */}
-                                <button className="save-details" onClick={()=>{setFormType(<AdminLogin/>)}}>Login</button>
-                                <button className="save-details" onClick={()=>{setFormType(<AdminRegister/>)}}>Register</button>
+                                <Link to='/admin/login'><button className="save-details">Login</button></Link>
+                                {/* <button className="save-details" onClick={()=>{setFormType(<AdminRegister/>)}}>Register</button> */}
                             </div>
                         </div>
                     </div>
                 </div>
                 <div className="card-div">
-                    {formType}
+                    <Outlet/>
                 </div>
                 
                 
