@@ -40,7 +40,7 @@ const carSchema = mongoose.Schema({
         type: String
     },
     AdminId: {
-        type: String
+        type:mongoose.Schema.Types.ObjectId, ref:'Admin', required: true
     }
 })
 
