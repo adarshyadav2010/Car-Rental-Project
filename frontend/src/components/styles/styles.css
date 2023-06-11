@@ -395,6 +395,25 @@ input:focus, textarea:focus{
    
 }
 
+.btn-Add-add-detail-ans-save{
+    height: 45px;
+    width: 150px;
+    border-radius: 25px;
+    font-size: large;
+    font-weight: bold;
+    background-color:blue;
+    border-color:aliceblue;
+    color:aliceblue; 
+}
+
+#delete-btn-for-edit-page{
+    margin-left: 550px;
+    background-color: red;
+}
+.save-btn-details{
+    margin-right: 10%;
+}
+
 #btn-cancel-add-detail{
     height: 40px;
     width: 150px;

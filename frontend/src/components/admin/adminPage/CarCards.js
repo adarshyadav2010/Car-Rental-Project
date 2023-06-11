@@ -1,8 +1,11 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function CarCards({car}) {
+    const navigate =useNavigate();
+    
     return (
-        <div className="car-container">
+        <div className="car-container" onClick={()=>navigate("/edit-car-page")}>
             <div className="img-container">
                 <img src={``} id="car-img" alt="img-car"
                     onClick={() => {

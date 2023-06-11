@@ -10,6 +10,7 @@ import AdminPage from "../admin/adminPage/AdminPage";
 import UserPage from "../user/userPage/UserPage";
 import UserOrder from "../user/userPage/UserOrder";
 import AddCar from "../admin/adminPage/AddCar";
+import EditCar from "../admin/adminPage/EditCar";
 
 
 
@@ -32,6 +33,7 @@ export default function AppRouter() {
             <Route path='/user-page' element={<UserPage/>}/>
             <Route path='/orderpage' element={<UserOrder/>}/>
             <Route path='/add-car-details' element={<AddCar/>}/>
+            <Route path='/edit-car-page' element={<EditCar/>}/>
         </Routes>
         
 

@@ -1,5 +1,5 @@
 import { useState } from "react"
-
+import '../../styles/styles.css'
 
 export default function NewCar({ data, setData }) {
     const { name, type, model, milage, image, perKm, description, carDetails, Details, availableTill, avalableFrom } = data
