@@ -252,6 +252,35 @@ li{
     padding-left: 5px;
 }
 
+/* Add car */
+
+.form-input{
+    width: 50%;
+    margin:5px 0px;
+    padding: 10px;
+}
+
+.addcar-page{
+    padding: 0px 50px 0px 50px;
+    
+}
+
+.data-form-flex{
+    display: flex;
+    gap:50px;
+    width: 100%;
+    
+}
+
+.input-gap-bottom{
+    margin-bottom: 10px;
+}
+
+.addcar-container{
+    height: 100vh;
+    overflow-y: hidden; /* Hide vertical scrollbar */
+    overflow-x: hidden;
+}
 
 .car-details{
     display: flex;
@@ -274,4 +303,105 @@ li{
     justify-content: space-between;
     padding: 0px 5px;
     height: 30px;
+}
+
+.form-input1{
+    width: 35%;
+    margin:5px 0px;
+    padding: 10px;
+}
+
+#form-left{
+    width: 50%;
+    border-right: 2px solid gray;
+}
+
+.form-main{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#form-right{
+    margin-left: 40px;
+}
+
+#imgs-add-car-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    height: 130px;
+    /* box-shadow: 3px 3px 10px black; */
+}
+.img-sort-box{
+    height: 100px;
+    width: 90px;
+    background-color: rgb(180, 171, 171);
+}
+
+#text-area-description{
+    width: 90%;
+    height: 100px;
+    border-radius: 10px;
+    margin-top: 10px ; 
+    font-size: larger;
+    font-weight: bolder;  ;
+}
+
+.date-input,#per-km,.select-things{
+    width: 180px;
+    height: 30px;
+    margin-top: 10PX;
+    font-size: medium;
+    font-weight: bold;
+}
+
+.car-detail-description{
+    height: 100px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+input:focus, textarea:focus{
+    border-color: blue;
+    box-shadow: 3px 3px 10px blue;
+    outline: rgb(87, 87, 219);
+}
+
+#preview-img-of-the-file{
+    height: 100%;
+}
+
+#image-add-in-add-user-form{
+    padding-bottom: 20px;
+  }
+
+  #btn-cancel-add-detail-container{
+    display: flex;
+    width: 100%;
+    margin-left: 8%; 
+    justify-content: space-between;
+    margin-right: 8%;
+}
+#btn-Add-add-detail-ans-save{
+    height: 40px;
+    width: 150px;
+    border-radius: 25px;
+    font-size: large;
+    font-weight: bold;
+    background-color:blue;
+    border-color:aliceblue;
+    color:aliceblue;
+    margin-right:20% ;
+   
+}
+
+#btn-cancel-add-detail{
+    height: 40px;
+    width: 150px;
+    border-radius: 25px;
+    font-size: large;
+    font-weight: bold;
+    background-color: aliceblue;
+    border-color: blue;
+    color: blue;
 }
