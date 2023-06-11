@@ -103,6 +103,10 @@ h2{
     width: 30%;
 }
 
+.admin-container{
+    height: 100vh;
+}
+
 .admin-page{
     padding: 0px 50px 0px 50px;
 }
@@ -205,4 +209,69 @@ h2{
 li{
     list-style: none;
     padding: 0px 25px;
+}
+
+/* car adding */
+
+/* .car-details-cont{
+    display: flex;
+    flex-wrap: wrap;
+} */
+
+.main-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: flex-start;
+    padding-bottom: 30px;
+}
+
+.admin-header{
+    display: flex;
+    justify-content: space-between;
+}
+
+.car-container{
+    max-height:250px ;
+    max-width: 250px;
+    box-shadow: 0px 2px 3px black;
+    border-radius: 15px;
+    margin-top: 20px;
+}
+
+.img-container{
+    height: 150px;
+    width: 100%;
+    text-align: center;
+    background-color: rgb(176, 172, 172);
+    border-radius: 15px  15px 0px  0px;
+}
+
+.person-nos{
+    color: rgb(174, 164, 164);
+    padding-left: 5px;
+}
+
+
+.car-details{
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 5px;
+}
+
+.card-2nd{
+    display: flex;
+    flex-direction: column;
+    height: 40px;
+}
+
+.distance-det{
+    color: rgb(77, 219, 77);
+}
+
+.date-details{
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 5px;
+    height: 30px;
 }

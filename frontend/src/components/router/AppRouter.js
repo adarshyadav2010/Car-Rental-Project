@@ -9,6 +9,7 @@ import HomeCard from "../homePage/HomeCard";
 import AdminPage from "../admin/adminPage/AdminPage";
 import UserPage from "../user/userPage/UserPage";
 import UserOrder from "../user/userPage/UserOrder";
+import AddCar from "../admin/adminPage/AddCar";
 
 
 
@@ -30,6 +31,7 @@ export default function AppRouter() {
             <Route path='/admin-page' element={<AdminPage/>}/>
             <Route path='/user-page' element={<UserPage/>}/>
             <Route path='/orderpage' element={<UserOrder/>}/>
+            <Route path='/add-car-details' element={<AddCar/>}/>
         </Routes>
         
 
