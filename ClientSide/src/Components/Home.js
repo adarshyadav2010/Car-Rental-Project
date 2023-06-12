@@ -8,7 +8,7 @@ import Navigation from './Navigation';
 
 
 function Home() {
-  const [FormType, setFormType]  = useState(<UserLogin/>);
+  const [FormType, setFormType]  = useState(<UserLogin/>)
   function usersignup(){
     setFormType(<UserSign/>) 
   };
