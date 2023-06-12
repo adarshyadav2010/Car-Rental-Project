@@ -2,7 +2,7 @@ import { useState } from "react"
 import '../../styles/styles.css'
 
 export default function NewCar({ data, setData }) {
-    const { name, type, model, milage, image, perKm, description, carDetails, Details, availableTill, avalableFrom } = data
+    const { name, type, model, milage, image, perKm, description, carDetails, Details, availableTill, availableFrom } = data
     const [file, setFile] = useState("");
 
 
@@ -60,7 +60,7 @@ export default function NewCar({ data, setData }) {
                 <div className="data-form-flex input-gap-bottom">
                     <div>
                         <label>Available From</label><br />
-                        <input type="date" className="date-input" name="avalableFrom" onChange={(e) => setData({ ...data, avalableFrom: e.target.value })} value={avalableFrom} />
+                        <input type="date" className="date-input" name="avalableFrom" onChange={(e) => setData({ ...data, availableFrom: e.target.value })} value={availableFrom} />
                     </div>
 
                     <div>

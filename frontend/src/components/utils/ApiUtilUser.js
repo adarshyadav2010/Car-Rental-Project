@@ -1,5 +1,5 @@
 
-const API_USER="http://localhost:8080"
+const API_USER="https://car-rent-backend.onrender.com"
 
 
 function addUser(UserData){

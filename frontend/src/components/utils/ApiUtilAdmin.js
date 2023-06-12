@@ -1,5 +1,5 @@
 
-const API_ADMIN="http://localhost:8080"
+const API_ADMIN="https://car-rent-backend.onrender.com"
 
 
 function addAdmin(AdminData){
