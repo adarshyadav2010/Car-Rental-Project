@@ -31,7 +31,7 @@ function Map(props) {
       script.onload = loadMap;
       document.body.appendChild(script);
     }
-  }, []);
+  }, [])
 
   useEffect(() => {
 
@@ -52,7 +52,7 @@ function Map(props) {
           headerData.distance = ans.join("");
         } else {
           console.error("Directions request failed due to " + status);
-        }
+        };
 
         
         
@@ -74,4 +74,4 @@ function Map(props) {
   return <div id="map" style={{width: "17vw", height: "15vh" }}></div>;
 }
 
-export default Map ;
+export default Map;
