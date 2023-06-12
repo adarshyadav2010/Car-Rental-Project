@@ -3,6 +3,9 @@ const Router = express.Router();
 // const {userRegisterCtrl, loginUserCtrl} = require("./../Controllers/UserController")
 const cors = require("cors");
 const {orderRegisterCtrl, getOrdersCtrl,deleteOrderCtrl,updateOrderCtrl} = require("./../Controllers/OrderController")
+// const {userRegisterCtrl, loginUserCtrl} = require("./../Controllers/UserController")
+
+
 
 Router
   .route('/')
