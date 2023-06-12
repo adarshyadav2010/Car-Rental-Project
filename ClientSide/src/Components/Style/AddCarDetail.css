@@ -1,13 +1,13 @@
 #main-container-of-form{
     display: flex;
     flex-wrap: wrap;
-
+    
 }
 .data-form-flex{
     display: flex;
     gap:50px;
     width: 100%;
-    
+
 }
 #left-side-form{
     width: 40%;
