@@ -10,12 +10,10 @@ function Header() {
     <div id='header'>
       <div className='container'>
         <form id="form" action="">
-
           <li className='Origin' 
              >Origin :{headerData.origin}</li>
 
           <i className="fa-solid fa-arrow-right  arrow" style={{ color: "#4279cd" }}></i>
-
           <li  className="Origin"
             >Destination :{headerData.destination}</li>
 
@@ -25,7 +23,6 @@ function Header() {
           <li type="date"  className="Origin"
             >Ending :{headerData.endDate}</li>
 
-          
           <Link to="./Page3" id="modify" onClick={()=>setheaderData(headerData)}>Modify</Link>
         </form>
     
@@ -33,4 +30,4 @@ function Header() {
     </div>
   )
 }
-export default Header;
+export default Header ;
