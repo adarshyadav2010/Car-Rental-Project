@@ -12,4 +12,5 @@ function addAdmin(AdminData){
     .then(res => res.json())
 }
 
+
 export {addAdmin}
