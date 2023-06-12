@@ -11,11 +11,11 @@
     box-shadow: 3px 3px 10px black;
     border-radius: 15px;
     margin-top: 20px;
-
+ 
 }
 hr{
     margin-top: 5px;
-  
+   
 }
 #main-container{
     display: flex;
