@@ -6,7 +6,7 @@ import {addUser} from "../Utils/ApiUtilUser"
 import "./../Components/Style/login.css"
 
 function UserSign () {
-
+ 
   const [loder , setLoder] = useState(false);
   const [inputdata, setInputData] = useState( {
     Name: "",
