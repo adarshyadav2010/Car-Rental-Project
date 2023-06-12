@@ -1,16 +1,13 @@
 
-import React from 'react'
+import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import "./Style/AdminPagenav.css"
+import "./Style/AdminPagenav.css";
 
 
 const Navigation = () => {
-  return (
-    <>
-
-      
+  return <>
 
    <nav id="admin-page-nav-container-my-nav">
 <div id="logo-of-the-rental-car-app">
@@ -20,7 +17,6 @@ const Navigation = () => {
 </nav>
 
     </>
-  )
-}
+};
 
-export default Navigation
+export default Navigation ;
