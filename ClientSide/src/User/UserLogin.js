@@ -13,7 +13,7 @@ const [loder , setLoder] = useState(false)
         email: "",
         password: ""
       });
-      
+     
       const handleEmailChange = (e) => {
         setError("")
         setInputData({...inputdata, email: e.target.value});
