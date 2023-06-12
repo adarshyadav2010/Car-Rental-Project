@@ -8,6 +8,7 @@ import { CarContextDetails } from '../Context/CarContext'
 function Header() {
   const {headerData ,setheaderData,setInputData}=useContext(CarContextDetails);
   setInputData(headerData)
+  
   return (
     <div id='header'>
       <div className='container'>
