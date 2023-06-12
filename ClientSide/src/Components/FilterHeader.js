@@ -18,7 +18,7 @@ function FilterHeader() {
          <div id="button">
             
             <select className="select" onChange={(e) => setQuerry(e.target.value)}>
-            
+   
                <option>CarType</option>
                <option>XUV</option>
                <option>UV</option>
