@@ -18,7 +18,7 @@ function GetCar(id){
     })
     .then(res=>res.json())
   }
-
+ 
 function addCar(cardata){
     return fetch(`${API_BASE_URL}/cars`, {
         method: 'POST',
