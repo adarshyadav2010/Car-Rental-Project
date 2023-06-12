@@ -9,8 +9,7 @@ function FilterHeader() {
           return data.filter(
               (item) =>
                   item.type.toLowerCase().includes(querry) ||
-                  item.milage.toLowerCase().includes(querry)
-                 
+                  item.milage.toLowerCase().includes(querry)     
           );
       };
   
