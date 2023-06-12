@@ -29,7 +29,6 @@ function Header() {
  
            <Link to="./Page3" id="modify" onClick={()=>setheaderData(headerData)}>Modify</Link>
         </form>
- 
       </div>
     </div>
   )
