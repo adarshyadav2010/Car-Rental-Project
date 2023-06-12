@@ -24,8 +24,7 @@ function Home() {
   function AdminSignup(){
     setFormType(<AdminSign/>) 
   };
-  return (
-    <>
+  return <>
     <Navigation/>
       <div className='Home-page'>  
         <div className='Register'>
@@ -50,8 +49,7 @@ function Home() {
         </div>
       </div>     
     </>
-  )
 }
 
 
-export default Home
+export default Home;
