@@ -1,13 +1,13 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useEffect, useState, useContext } from "react"
 import { CarContextDetails } from './../Context/CarContext'
 
 
 function Map(props) {
-  const [map, setMap] = useState(null);
+  const [map, setMap] = useState(null)
   const [directionsService, setDirectionsService] = useState(null);
   const [directionsRenderer, setDirectionsRenderer] = useState(null);
-  const {headerData} = useContext(CarContextDetails);
-  const [imageUrl, setMapImageUrl] = useState(null);
+  const {headerData} = useContext(CarContextDetails)
+  const [imageUrl, setMapImageUrl] = useState(null)
 
   const { origin, destination } = props;
 
