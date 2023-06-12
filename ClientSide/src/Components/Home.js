@@ -1,10 +1,11 @@
-import React, { useState } from 'react'
-import UserLogin from '../User/UserLogin'
-import UserSign from '../User/UserSign'
+import React, { useState } from 'react';
+import UserLogin from '../User/UserLogin';
+import UserSign from '../User/UserSign';
 import AdminLogin from '../Admin/AdminLogin';
 import AdminSign from '../Admin/AdminSign';
-import './../Components/Style/Home.css'
+import './../Components/Style/Home.css';
 import Navigation from './Navigation';
+
 
 function Home() {
   const [FormType, setFormType]  = useState(<UserLogin/>);
