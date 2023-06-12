@@ -233,7 +233,7 @@ li{
 
 .car-container{
     max-height:250px ;
-    max-width: 250px;
+    width: 300px;
     box-shadow: 0px 2px 3px black;
     border-radius: 15px;
     margin-top: 20px;
@@ -250,6 +250,9 @@ li{
 .person-nos{
     color: rgb(174, 164, 164);
     padding-left: 5px;
+    /* border-bottom-color: gray; */
+    /* border-width: 1px solid gray;
+    border-bottom:gray; */
 }
 
 /* Add car */
@@ -423,4 +426,47 @@ input:focus, textarea:focus{
     background-color: aliceblue;
     border-color: blue;
     color: blue;
+}
+
+/* user page */
+
+.user-car-container{
+    max-height:250px ;
+    max-width: 300px;
+    box-shadow: 0px 2px 3px black;
+    border-radius: 15px;
+    margin-top: 20px;
+}
+
+.fare{
+    text-align: center;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+.booknow{
+    float: right;
+    height: 40px;
+    color: white;
+    text-align: center;
+    padding-top: 10px;
+    padding-right: 30px;
+
+}
+
+.user-date-details{
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    background: linear-gradient(to right, white 50%, blue 50%);
+    border-bottom-right-radius: 9px;
+}
+
+.user-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: flex-start;
+    padding-bottom: 30px;
+    padding-left: 50px;
 }

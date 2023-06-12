@@ -11,7 +11,7 @@ import UserPage from "../user/userPage/UserPage";
 import UserOrder from "../user/userPage/UserOrder";
 import AddCar from "../admin/adminPage/AddCar";
 import EditCar from "../admin/adminPage/EditCar";
-
+import BookNow from "../user/userPage/bookNow";
 
 
 export default function AppRouter() {
@@ -34,6 +34,7 @@ export default function AppRouter() {
             <Route path='/orderpage' element={<UserOrder/>}/>
             <Route path='/add-car-details' element={<AddCar/>}/>
             <Route path='/edit-car-page' element={<EditCar/>}/>
+            <Route path="/booknow" element={<BookNow/>}/>
         </Routes>
         
 
