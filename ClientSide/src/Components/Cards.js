@@ -28,7 +28,7 @@ export default function Cards() {
           data.map((d, i) => {
             return <div key={i}>
               <Card className='card'>
-
+    
                 <div className="img">
                   <Card.Img src={`https://car-rental-app-y59o.onrender.com/cars/${d.image}`} />
                 </div>
