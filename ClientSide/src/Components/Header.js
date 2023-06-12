@@ -3,6 +3,8 @@ import '../Components/Style/header.css';
 import { Link } from 'react-router-dom'
 import { CarContextDetails } from '../Context/CarContext'
 
+
+
 function Header() {
   const {headerData ,setheaderData,setInputData}=useContext(CarContextDetails);
   setInputData(headerData)
