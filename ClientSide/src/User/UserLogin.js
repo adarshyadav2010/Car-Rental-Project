@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useState } from 'react';
 import './../Components/Style/Form.css';
 import {useNavigate} from "react-router-dom"
 import { ToastContainer, toast } from "react-toastify"
