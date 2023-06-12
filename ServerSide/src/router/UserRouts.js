@@ -11,14 +11,7 @@ Router
    .route('/login')
    .post(cors(), loginUserCtrl)
 
-// Router
-//   .route('/')
-//   .get()
 
-// Router
-//   .route('/:id')
-//   .get()
-//   .delete()
 
 
 
