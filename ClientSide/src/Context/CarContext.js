@@ -36,8 +36,6 @@ const [data, setData] = useState({
 });
 const [EditPaymentDetails , setEditPaymentDetails] = useState({})
    
-
-
     return<>
 
      <CarContextDetails.Provider value={{car, setCar,data,setData,edit,setEdit,headerData,setheaderData, CarData, setCarData, bookingDetails, setBookingDetails,Bookdata,setBookData,EditPaymentDetails , setEditPaymentDetails,inputdata,setInputData}}>
