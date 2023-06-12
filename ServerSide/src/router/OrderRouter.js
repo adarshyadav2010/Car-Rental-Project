@@ -6,7 +6,6 @@ const {orderRegisterCtrl, getOrdersCtrl,deleteOrderCtrl,updateOrderCtrl} = requi
 // const {userRegisterCtrl, loginUserCtrl} = require("./../Controllers/UserController")
 
 
-
 Router
   .route('/')
   .post(orderRegisterCtrl)
