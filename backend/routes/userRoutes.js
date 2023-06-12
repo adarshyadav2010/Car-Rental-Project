@@ -1,58 +1,53 @@
-const userRouter = require('express').Router();
-const userModel = require('../model/userModel');
+const userRouter =require('express').Router()
+const user = require('../model/userModel');
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
-require('dotenv').config();
+const env = require('dotenv').config();
 
-userRouter.post('/register', async(req,res)=>{
-    try{
-        const {Name, Email, Password} = req.body;
-        let existingUser = await userModel.findOne({ Email });
-        if (existingUser) return res.status(400).json({ status: "Failed", field: "Email", message: "Email already exists!!" })
-        bcrypt.hash(Password, 10).then(encryptedData=>{
-            const newUser = new userModel({
-                Name,
-                Email,
-                Password: encryptedData
-            })
-            newUser.save().then(record => {
-                res.status(201).send({
-                    status : 'success',
-                    user : record
-                })
-            }).catch(err=>{
-                console.log(err);
-                res.status(400).send({
-                    status: 'failed',
-                    message : 'failed to create user account' 
-                })
+userRouter.post('/register', (req,res)=>{
+    const userDetails = req.body;
+    bcrypt.hash(userDetails.Password, 10).then(encryptedData=>{
+        const newUser = new user({
+            Name: userDetails.Name,
+            Email: userDetails.Email,
+            Password: encryptedData
+        })
+        newUser.save().then(record => {
+            console.log(record)
+            res.status(200).send({
+                // message : 'user registered successfully'
+                status : 'success',
+                data : record
             })
         }).catch(err=>{
-            console.log(err);
-            res.status(500).send({
-                error : 'server error'
+            console.log(err)
+            res.status(400).send({
+                error : 'failed to create user' 
             })
         })
-    }
-    catch(err){
-            res.status(400).send(err.message);
-    }
-
+    }).catch(err=>{
+        res.status(400).send({
+            error : 'server error'
+        })
+    })
+    
 })
 
- 
-userRouter.post('/login',async(req,res)=>{
-    try{
-        const {Email, Password} = req.body;
-        let user = await userModel.findOne({Email: Email})
-        if(user){
-            return bcrypt.compare(Password, user.Password).then(authStatus => {
+// const key = process.env.ENCRYPTION_SECRET
+// console.log(env, key)
+
+userRouter.post('/login', (req, res) => {
+    const userDetails = req.body;
+    user.findOne({Email: userDetails.Email}).then(registeredUser => {
+        // console.log(registeredUser)
+        if(registeredUser) {
+            return bcrypt.compare(userDetails.Password, registeredUser.Password).then(authStatus => {
                 if(authStatus) {
                     // console.log(authStatus);
                     return jwt.sign(
                         {
-                            Email: admin.Email, 
-                            id: user._id
+                            Email: registeredUser.Email, 
+                            id: registeredUser._id
                         }, 
                         process.env.ENCRYPTION_SECRET,
                         {
@@ -64,30 +59,27 @@ userRouter.post('/login',async(req,res)=>{
                                 });
                             }
                             return res.status(200).send({
-                                status: "Login successful",
-                                token: token,
-                                Name: user.Name,
-                                userId: user._id
+                                status: "Authentication successful",
+                                token: token
                             });
                         }
                     )
                 }
                 // if authStatus is false
                 res.status(400).send({
-                    status: "failed",
-                    message: "Enter valid user details"
+                    message: "Authentication failed"
                 });
 
             })
-        }else{
-            res.status(401).send({ status:"failed",message:"Enter valid user details"})
         }
-    }
-    catch(err){
-        console.log(err);
-        res.status(500).send({error: "server error"});
-    }
+        res.status(400).send({
+            message: "Authentication failed"
+        });
+    }).catch(err => {
+        res.send(err);
+    })
+
 })
-   
+
 
 module.exports = userRouter;

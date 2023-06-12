@@ -1,7 +1,8 @@
 const bookingRouter = require('express').Router();
 const bookingModel = require('../model/bookingDetailsModel');
+const userAuthMiddleware =  require('../middleware/userAuth');
 
-bookingRouter.post('/order', async (req, res) => {
+bookingRouter.post('/order', userAuthMiddleware, async (req, res) => {
     try {
         const { userId, carname, carNumber, perKm, image, origin, destination, startDate, endDate, BookingId, bookingDate, bookingTime, carId, priceperkm, pricing, Tax, Subtotal, mapImg } = req.body;
         const newOrder = new bookingModel({
@@ -43,9 +44,10 @@ bookingRouter.post('/order', async (req, res) => {
 })
 
 
-bookingRouter.get('/my-orders', async (req,res)=>{
+bookingRouter.get('/my-orders',userAuthMiddleware, async (req,res)=>{
     
     try{
+        const user =req.userId;
         const userId = req.query.userId;
         await bookingModel.find({userId}).then(orders=>{
             res.status(200).send({
@@ -66,9 +68,9 @@ bookingRouter.get('/my-orders', async (req,res)=>{
     }
 })
 
-bookingRouter.put('/my-orders/:id', async(req,res)=>{
+bookingRouter.put('/my-orders/:id',userAuthMiddleware, async(req,res)=>{
     const updatedData = req.body;
-    bookingModel.findOneAndUpdate({_id: req.id},updatedData,{new:true}).then(bookUpdate=>{
+    bookingModel.findOneAndUpdate({_id: req.id, user: req.userId},updatedData,{new:true}).then(bookUpdate=>{
         if(!bookUpdate){
             return res.status(400).send({
                 status : 'failed',
@@ -90,7 +92,7 @@ bookingRouter.put('/my-orders/:id', async(req,res)=>{
     })
 })
 
-bookingRouter.delete('my-orders/:id', (req,res)=>{
+bookingRouter.delete('my-orders/:id',userAuthMiddleware, (req,res)=>{
     bookingModel.deleteOne({_id: req.id, user: req.userId}).then(booking => {
         res.status(200).send({
             status: 'success',
@@ -105,3 +107,5 @@ bookingRouter.delete('my-orders/:id', (req,res)=>{
     });
 })
 
+
+module.exports = bookingRouter;
