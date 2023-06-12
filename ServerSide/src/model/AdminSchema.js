@@ -1,5 +1,7 @@
+
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');  // for hashing password
+
 
 const AdminSchema =new mongoose.Schema({
     Name: {
