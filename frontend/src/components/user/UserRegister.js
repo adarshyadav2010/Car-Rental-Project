@@ -1,10 +1,12 @@
-import React, { useState } from 'react'
-
+import React, { useState ,} from 'react'
+import { useNavigate } from "react-router-dom"
 import { ToastContainer, toast } from "react-toastify"
 import 'react-toastify/dist/ReactToastify.css';
 import '../styles/styles.css';
 import UserLogin from './UserLogin';
 import { Link } from 'react-router-dom';
+
+import {addUser} from '../utils/ApiUtilUser'
 
 function UserRegister() {
 
@@ -24,7 +26,7 @@ function UserRegister() {
 
 
     const [err, setErr] = useState("")
-    // const navigate = useNavigate();
+    const navigate = useNavigate();
     const onSubmitData = async (e) => {
         e.preventDefault();
         console.log(inputdata);
@@ -55,20 +57,25 @@ function UserRegister() {
             toast.error("password is not Matching")
         }
         else {
-            //   addUser(inputdata).then(data=>{
-            //     if(data.status==="Failed"){
-            //       setErr("User Already Exists")
-            //     }else if(data.status==="Success"){
-            //       toast.success("Registered Successfully");
-            //       setInputData({
-            //         Name: "",
-            //         Email: "",
-            //         Contact: "",
-            //         Password: "",
-            //         Confirm_Password: ""
-            //       })
-            //     }
-            //   });
+            addUser(inputdata).then(data=>{
+
+                if(data.status==="failed"){
+                    console.log(data.message)
+                  setErr(data.message)
+                }else if(data.status==="success"){
+                    toast.success("Registered Successfully");
+                    // console.log('success')
+                  setErr("")
+                  setInputData({
+                    Name: "",
+                    Email: "",
+                    Contact: "",
+                    Password: "",
+                    Confirm_Password: ""
+                  })
+                //   navigate('/user/login')
+                }
+              });
 
         }
 

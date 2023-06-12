@@ -2,11 +2,14 @@ const mongoose = require("mongoose")
 
 const OrderSchema = mongoose.Schema({
     userId: {
-        type: String,
+        type:mongoose.Schema.Types.ObjectId, ref:'User', required: true
     },
     carname: {
         type: String,
 
+    },
+    carNumber:{
+        type: String,
     },
     perKm: {
         type: Number,

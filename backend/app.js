@@ -1,20 +1,36 @@
-const mongoose = require("mongoose");
-const bodyparser = require('body-parser');
-const express = require("express");
-const app = express();
-const path = require("path");
-const cors = require("cors");
+// const mongoose = require("mongoose");
+// const bodyparser = require('body-parser');
+// const express = require("express");
+// const app = express();
+// const path = require("path");
+// const cors = require("cors");
 
-const adminRouter = require('./routes/adminRoutes')
+// const adminRouter = require('./routes/adminRoutes');
+// const userRouter = require("./routes/usersRoutes");
+// const CarRouter =require("./routes/CarRouts")
+// const bookingRouter = require("./routes/BookingRoutes")
 
-app.use(cors());
+// app.use(cors());
 
-app.use(express.json());
-app.use(express.urlencoded({extended: false}));
-app.use(bodyparser.json());
-app.use(bodyparser.urlencoded({extended: false}))
+// app.use(express.json());
+// app.use(express.urlencoded({extended: false}));
+// app.use(bodyparser.json());
+// app.use(bodyparser.urlencoded({extended: false}))
 
 
-app.use('/admin', adminRouter)
 
-module.exports = app;
+// // app.use('/uploads', express.static('uploads'));
+
+// app.use(function (req, res, next) {
+//     res.header("Access-Control-Allow-Origin", "*");
+//     res.header("Access-Control-Allow-Methods", "GET, PUT, POST");
+//     res.header("Access-Control-Allow-Headers", "*");
+//     next();
+// });
+
+// app.use('/admin', adminRouter)
+// app.use('/user', userRouter)
+// app.use('/cars', CarRouter)
+// app.use('/orders', bookingRouter)
+
+// module.exports = app;

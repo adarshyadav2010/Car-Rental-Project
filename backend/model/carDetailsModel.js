@@ -1,7 +1,7 @@
 const mongoose = require("mongoose")
 
 const carSchema = mongoose.Schema({
-    carname: {
+    name: {
         type: String,
         required: true
     },
@@ -21,7 +21,7 @@ const carSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    avalableFrom: {
+    availableFrom: {
         type: String
     },
     availableTill: {
@@ -40,7 +40,7 @@ const carSchema = mongoose.Schema({
         type: String
     },
     AdminId: {
-        type: String
+        type:mongoose.Schema.Types.ObjectId, ref:'Admin', required: true
     }
 })
 
