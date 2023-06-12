@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import '../Components/Style/header.css';
-import { Link } from 'react-router-dom';
-import { CarContextDetails } from '../Context/CarContext';
+import { Link } from 'react-router-dom'
+import { CarContextDetails } from '../Context/CarContext'
 
 function Header() {
   const {headerData ,setheaderData,setInputData}=useContext(CarContextDetails);
@@ -25,7 +25,7 @@ function Header() {
 
           <Link to="./Page3" id="modify" onClick={()=>setheaderData(headerData)}>Modify</Link>
         </form>
-    
+ 
       </div>
     </div>
   )
