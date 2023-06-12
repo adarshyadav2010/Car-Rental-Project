@@ -18,7 +18,7 @@ const [loder , setLoder] = useState(false)
         setError("")
         setInputData({...inputdata, email: e.target.value});
       }
-      
+     
       const handlePasswordChange = (e) => {
         setError("")
         setInputData({...inputdata, password: e.target.value});
