@@ -9,6 +9,7 @@ function Header() {
   const {headerData ,setheaderData,setInputData}=useContext(CarContextDetails);
   setInputData(headerData)
   
+  
   return (
     <div id='header'>
       <div className='container'>
@@ -25,7 +26,7 @@ function Header() {
 
           <li type="date"  className="Origin"
             >Ending :{headerData.endDate}</li>
-
+ 
            <Link to="./Page3" id="modify" onClick={()=>setheaderData(headerData)}>Modify</Link>
         </form>
  
