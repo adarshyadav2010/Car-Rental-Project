@@ -1,7 +1,7 @@
 import React, {  createContext, useEffect, useState } from "react"
 
 // import {GetCar} from "../Utils/ApiUtils";
-//import react from 'react'
+
 
 export const CarContextDetails =createContext() ;
 
