@@ -2,9 +2,9 @@
 import React, { useEffect, useState } from "react";
 import Card from 'react-bootstrap/Card';
 import './Style/cards.css';
-
+ 
 export default function Cards() {
-
+ 
   let [data, setdata] = useState([])
   useEffect(() => {
     fetch("https://car-rental-app-y59o.onrender.com/cars/", {
