@@ -6,11 +6,11 @@ require('dotenv').config();
 
 adminRouter.post('/register', async(req,res)=>{
     try{
-        console.log('hello admin')
+        // console.log('hello admin')
         const {Name, Email, Password, Contact} = req.body;
         // console.log(req.body)
         let existingadmin = await admin.findOne({ Email });
-        if (existingadmin) return res.status(400).json({ status: "Failed", field: "Email", message: "Email already exists!!" })
+        if (existingadmin) return res.status(400).json({ status: "failed", field: "Email", message: "Email already exists!!" })
         else{
             bcrypt.hash(Password, 10).then(encryptedData=>{
                 console.log(encryptedData)
@@ -36,6 +36,7 @@ adminRouter.post('/register', async(req,res)=>{
             }).catch(err=>{
                 console.log(err);
                 res.status(500).send({
+                    status: 'failed',
                     error : 'server error'
                 })
             })
@@ -43,7 +44,9 @@ adminRouter.post('/register', async(req,res)=>{
     }
     catch(err){
         console.error(err);
-        res.status(500).json({ message: 'Server error' });
+        res.status(500).json({ 
+            status:'failed',
+            message: 'Server error' });
     }
 })
 
@@ -66,6 +69,7 @@ adminRouter.post('/login',(req,res)=>{
                             }, (err, token) => {
                                 if(err) {
                                     return res.status(500).send({
+                                        status: "failed",
                                         message: "Token creation failed"
                                     });
                                 }
@@ -90,7 +94,9 @@ adminRouter.post('/login',(req,res)=>{
             }
         }).catch(err=>{
             console.log(err);
-            res.status(500).send({error: "server error"})
+            res.status(500).send({
+                status: "failed",
+                error: "server error"})
         }
         );
     }

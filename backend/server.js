@@ -12,7 +12,7 @@ const path = require("path");
 const cors = require("cors");
 
 const adminRouter = require('./routes/adminRoutes');
-const userRouter = require("./routes/userRoutes");
+const userRouter = require("./routes/usersRoutes");
 const CarRouter =require("./routes/CarRouts")
 const bookingRouter = require("./routes/BookingRoutes")
 

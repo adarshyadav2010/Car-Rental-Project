@@ -7,11 +7,12 @@ import { Link } from 'react-router-dom';
 function AdminLogin() {
 
     const navigate = useNavigate();
+
     const [inputdata, setInputData] = useState({
         Email: "",
         Password: ""
     });
-
+    const [error, setError] = useState("")
     const handleEmailChange = (e) => {
         setError("")
         setInputData({ ...inputdata, Email: e.target.value });
@@ -21,9 +22,8 @@ function AdminLogin() {
         setError("")
         setInputData({ ...inputdata, Password: e.target.value });
     }
-    const [error, setError] = useState("")
+    
 
-    // const Navigate = useNavigate();
 
     const onSubmitData = async (e) => {
         e.preventDefault();
@@ -47,7 +47,24 @@ function AdminLogin() {
             toast.error("Password is too Long")
         }
         else {
-            navigate('/admin-page')
+            fetch("http://localhost:8080/admin/login" ,{
+
+            method:"POST",
+            headers:{
+              "content-type":"application/json"
+            },
+            body:JSON.stringify(inputdata)
+          }).then(res=>res.json()).then(res=>{
+            console.log(res)
+            if(res.status==="Login successful"){
+              localStorage.setItem("token-admin" , JSON.stringify(res.token));
+              localStorage.setItem("Admin-name" , JSON.stringify(res.Name));
+              localStorage.setItem("Admin-Id" , JSON.stringify(res.adminId))
+              navigate("/admin-page")
+            }else if(res.status==="failed"){
+                setError(res.message)
+            }
+          })
         }
     }
 

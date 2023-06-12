@@ -41,7 +41,23 @@ function UserLogin() {
             toast.error("Password is too Long")
         }
         else {
-            navigate('/user-page')
+            fetch("http://localhost:8080/user/login" ,{
+
+            method:"POST",
+            headers:{
+              "content-type":"application/json"
+            },
+            body:JSON.stringify(inputdata)
+          }).then(res=>res.json()).then(res=>{
+            if(res.status==="Login successful"){
+              localStorage.setItem("token-user" , JSON.stringify(res.token));
+              localStorage.setItem("User-id" , JSON.stringify(res.UserId))
+              navigate("/user-page")
+            }else if(res.status==="failed"){
+              setError(res.message)
+            
+            }
+          })
         }
 
     }
@@ -55,7 +71,7 @@ function UserLogin() {
                     <h6 style={{ color: "red" }}>{error}</h6>
                     <input type="Email" name="Email" onChange={handleEmailChange} placeholder='Email' className='input-field'/>
 
-                    <input type="Password" onChange={handlePasswordChange} placeholder='Password' className='input-field'/>
+                    <input type="Password" name="Password" onChange={handlePasswordChange} placeholder='Password' className='input-field'/>
                     <div className="login-signup">
                         <Link to='/user/register' ><span >Create Account</span></Link>
                         <button type='submit' onClick={onSubmitData} className="save-details">Sign In</button>
