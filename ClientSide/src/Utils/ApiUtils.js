@@ -10,7 +10,6 @@ function GetCars(){
   .then(res=>res.json())
 }
 
-
 function GetCar(id){
     return fetch(`${API_BASE_URL}/cars/${id}`,{
       headers:{
