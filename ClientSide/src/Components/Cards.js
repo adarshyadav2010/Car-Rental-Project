@@ -14,7 +14,7 @@ export default function Cards() {
     })
       .then(res => res.json())
       .then(res => setdata(res));
-  }, [])
+  }, []);
 
   const [bookData, setbookData] = useState([])
   console.log(bookData);
