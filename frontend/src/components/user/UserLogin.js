@@ -50,7 +50,9 @@ function UserLogin() {
             body:JSON.stringify(inputdata)
           }).then(res=>res.json()).then(res=>{
             if(res.status==="Login successful"){
+                console.log(res)
               localStorage.setItem("token-user" , JSON.stringify(res.token));
+            //   const userIdObject= res.UserId
               localStorage.setItem("User-id" , JSON.stringify(res.UserId))
               navigate("/user-page")
             }else if(res.status==="failed"){

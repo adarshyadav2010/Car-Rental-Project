@@ -60,8 +60,8 @@ adminRouter.post('/login',(req,res)=>{
                         // console.log(authStatus);
                         return jwt.sign(
                             {
-                                Email: admin.Email, 
-                                id: admin._id
+                                Email: registeredUser.Email, 
+                                id: registeredUser._id
                             }, 
                             process.env.ENCRYPTION_SECRET,
                             {
@@ -76,8 +76,8 @@ adminRouter.post('/login',(req,res)=>{
                                 return res.status(200).send({
                                     status: "Login successful",
                                     token: token,
-                                    Name: admin.Name,
-                                    adminId: admin._id
+                                    Name: registeredUser.Name,
+                                    adminId: registeredUser._id
                                 });
                             }
                         )
