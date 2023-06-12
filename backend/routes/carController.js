@@ -5,7 +5,9 @@ const {GridFsStorage} = require("multer-gridfs-storage");
 const {GridFSBucket, MongoClient} = require("mongodb");
 const { model } = require( "mongoose" );
 const jwt = require("jsonwebtoken")
-const SECRATE_KEY = process.env.SECRATE_KEY
+const ENCRYPTION_SECRET = process.env.ENCRYPTION_SECRET
+const Admin = require("../model/adminModel");
+
 
 
 // ********get Image **********************//
@@ -50,7 +52,7 @@ const getCars = async(req,res)=>{
 const PostCars =  async(req, res)=>{
     try{
         if(req.headers.authorization){
-            let userVar = jwt.verify(req.headers.authorization, SECRATE_KEY)//id  //
+            let userVar = jwt.verify(req.headers.authorization, ENCRYPTION_SECRET)//id  //
             let data = new carDetails({image:req.file.filename,AdminId:userVar._id,...req.body});
             let createData = await data.save();
             res.status(201).send(createData)
@@ -67,7 +69,7 @@ const PostCars =  async(req, res)=>{
 const putCarData = async(req,res)=>{
     try {
         if(req.headers.authorization){
-        let userVar = jwt.verify(req.headers.authorization, SECRATE_KEY)
+        let userVar = jwt.verify(req.headers.authorization, ENCRYPTION_SECRET)
         let _id =req.params.id;
         let car= await carDetails.findOne({_id:_id});
          if(car){   
@@ -97,7 +99,7 @@ const putCarData = async(req,res)=>{
 const deleteCarData =  async(req,res)=>{
     try{
     if(req.headers.authorization){
-       let userVar = jwt.verify(req.headers.authorization, SECRATE_KEY)
+       let userVar = jwt.verify(req.headers.authorization, ENCRYPTION_SECRET)
        let _id =req.params.id;
      let car= await carDetails.findOne({_id:_id});
      if(car){

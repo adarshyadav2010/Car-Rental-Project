@@ -7,7 +7,7 @@ export const StateContextsData = createContext();
 
 export default function StateContexts({ children }) {
 
-    const [cars, setCars] = useState([])
+    const [car, setCar] = useState([])
     const [edit, setEdit] = useState({});
 
     const [headerData, setheaderData] = useState({});
@@ -23,7 +23,7 @@ export default function StateContexts({ children }) {
         MapImg: ""
     });
 
-    const [carDataDetails, setCarDataDetails] = useState({
+    const [data, setData] = useState({
         name: "",
         type: "",
         model: "",
@@ -37,9 +37,12 @@ export default function StateContexts({ children }) {
         Details: ""
     });
 
+    const [EditPaymentDetails , setEditPaymentDetails] = useState({})
+
+
     return <>
 
-        <StateContextsData.Provider value={{ cars, setCars, carDataDetails, setCarDataDetails, edit, setEdit, headerData, setheaderData, CarData, setCarData, bookingDetails, setBookingDetails, Bookdata, setBookData, traveldata, setTravelData }}>
+        <StateContextsData.Provider value={{car, setCar,data,setData,edit,setEdit,headerData,setheaderData, CarData, setCarData, bookingDetails, setBookingDetails,Bookdata,setBookData,EditPaymentDetails , setEditPaymentDetails,traveldata,setTravelData}}>
             {children}
         </StateContextsData.Provider>
     </>

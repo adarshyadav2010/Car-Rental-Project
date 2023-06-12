@@ -5,10 +5,12 @@ import { StateContextsData } from "../../context/StateContext"
 import Backdrop from '@mui/material/Backdrop';
 import CircularProgress from '@mui/material/CircularProgress';
 import NewCar from "./NewCar";
-
+import HomePage from "../../homePage/HomePage";
+import { addCar } from "../../utils/ApiUtils";
 
 export default function AddCar() {
     const navigator1 = useNavigate()
+    const {setCar} = useContext(StateContextsData)
     const [data, setData] = useState({
         name:"",
         type:"",
@@ -23,11 +25,35 @@ export default function AddCar() {
         Details:""
       })
       const [loader , setLoader] = useState(false);
+      const TokenAdmin= JSON.parse(localStorage.getItem("token-admin"))
     function submitFunction(e){
         e.preventDefault()
+        const newformData = new FormData(e.target)
+        console.log(newformData)
+        addCar(newformData).then(data=>{
+            setCar(d=>{
+              return [data,...d]
+          })
+          setLoader(false)
+          setData({
+              name:"",
+              type:"",
+              model:"",
+              milage:"",
+              image:"",
+              availableFrom:"",
+              availableTill:"",
+              perKm:"",
+              description:"",
+              carDetails:"",
+              Details:""
+          })
+          navigator1("/admin-page")
+       })
     }
     return (
         <div className='addcar-container'>
+            { TokenAdmin? <>
             <AdminNav />
                 <div className="addcar-page">
                     <h4 className="heading-admin">Add Car Details</h4>
@@ -44,6 +70,8 @@ export default function AddCar() {
                         <CircularProgress color="inherit" />
                     </Backdrop>
                 </div>
+                </>:<HomePage/>
+            }
         </div>
     )
 }

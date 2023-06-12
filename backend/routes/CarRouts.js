@@ -11,7 +11,7 @@ const { model } = require( "mongoose" );
 // ****---------------We Use Multer for add Images----------------******//
 
 const storage = new GridFsStorage({
-    url:process.env.DB_URL,
+    url:process.env.DB_URL+process.env.DATABASE,
     file:(req,file)=>{
         return{
             bucketName:process.env.CAR_IMAGES,
