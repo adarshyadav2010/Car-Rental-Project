@@ -30,6 +30,12 @@ const [error , setError] = useState("");
         e.preventDefault();
         // console.log(inputdata);
         const {email, password} = inputdata;
+        
+        
+        
+        
+        
+        
 
         if(email=== ""){
             toast.error("Email is required");
