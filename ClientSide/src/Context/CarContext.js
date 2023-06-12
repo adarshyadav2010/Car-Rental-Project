@@ -3,7 +3,6 @@ import React, {  createContext, useEffect, useState } from "react"
 
 export const CarContextDetails =createContext() ;
 
-
 export default function CarContext({children}){
     const [car, setCar] = useState([])
     const [edit, setEdit] = useState({});
