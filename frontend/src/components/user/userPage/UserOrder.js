@@ -12,7 +12,7 @@ export default function UserOrder() {
     let [data, setdata] = useState([])
     useEffect(() => {
 
-        fetch("https://car-rent-backend.onrender.com/cars/", {
+        fetch("https://car-rent-backend.onrender.com/cars", {
 
             headers: {
                 "authorization": JSON.parse(localStorage.getItem("token-user "))

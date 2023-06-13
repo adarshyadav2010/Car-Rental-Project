@@ -13,9 +13,11 @@ const orderRegisterCtrl = async (req, res) => {
 
 
 const getOrdersCtrl = async (req, res) => {
+  console.log(req.params.id)
     try {
       const UserId= req.params.id
       const allOrders = await Orders.find({userId:UserId});
+      console.log(allOrders)
       res.status(200).json({
         status: "success",
         data: allOrders,

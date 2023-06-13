@@ -75,7 +75,7 @@ export default function AdminPage() {
                                             </div>
                                             <div className="card-2nd">
                                                 <div className="person-nos">6 person</div>
-                                                <div className="car-details">
+                                                <div className="car-details1">
                                                     <span>{data.name}</span>
                                                     <span className="distance-det">{data.perKm} KM/RS</span>
                                                 </div>
