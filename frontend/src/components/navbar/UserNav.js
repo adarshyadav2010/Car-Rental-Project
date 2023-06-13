@@ -12,10 +12,10 @@ export default function UserNav(){
                 </div>
                 <div className='user-funcs'>
                     <div className='user-logout'>
-                        <Link to='' className='text'><span className='text'>My Bookings</span></Link>
+                        <Link to='/my-bookings' className='text'><span className='text'>My Bookings</span></Link>
                     </div>
                     <div className='user-logout'>
-                        <button className='log-out'> LogOut</button>
+                    <Link to = "/"><button className='log-out'> LogOut</button></Link>
                     </div>
                 </div>
                 
