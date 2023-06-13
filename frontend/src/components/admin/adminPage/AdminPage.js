@@ -34,7 +34,7 @@ export default function AdminPage() {
         <div className='admin-container'>
             <AdminNav />
             <div className="admin-page">
-                <h1 className="heading-admin">Hello Admin...</h1>
+                <h1 className="heading-admin">Hello {adminName}...</h1>
                 <div>
                     <div className="admin-header">
                         <h3>Cars</h3>
@@ -55,35 +55,35 @@ export default function AdminPage() {
                             {
                                 car.map((data, i) => {
                                     return (
-                                        <div key={i} className="car-container" onClick={() => navigate("/edit-car-page")}>
+                                        <div key={i} className="car-container" >
                                             <div className="img-container">
-                                                <img src={``} id="car-img" alt="img-car"
+                                                <img src={`https://car-rent-backend.onrender.comcars/${data.image}`} id="car-img" alt="img-car"
                                                     onClick={() => {
-                                                        // if (AdminId !== d.AdminId) {
-                                                        //     console.log(d.AdminId)
-                                                        //     setErr("You Don`t Have Access To Edit This Details");
-                                                        //     setOk("OK")
-                                                        // }
-                                                        // else {
-                                                        //     console.log(d.AdminId)
-                                                        //     setEdit(d);
-                                                        //     Navigater("/edit-car-details")
-                                                        // }
+                                                        if (AdminId !== data.AdminId) {
+                                                            console.log(data.AdminId)
+                                                            setErr("You Don`t Have Access To Edit This Details");
+                                                            setOk("OK")
+                                                        }
+                                                        else {
+                                                            console.log(data.AdminId)
+                                                            setEdit(d);
+                                                            navigate("/edit-car-details")
+                                                        }
 
                                                     }} />
                                             </div>
                                             <div className="card-2nd">
                                                 <div className="person-nos">6 person</div>
                                                 <div className="car-details">
-                                                    <span>name</span>
-                                                    <span className="distance-det">per km KM/RS</span>
+                                                    <span>{data.name}</span>
+                                                    <span className="distance-det">{data.perKm} KM/RS</span>
                                                 </div>
                                             </div>
 
                                             <hr />
                                             <div className="date-details">
                                                 <span >Available Date</span>
-                                                <span >start - till</span>
+                                                <span >{data.availableFrom.split("-").reverse().join("/").slice(0,5)}-{data.availableTill.split("-").reverse().join("/").slice(0,5)}</span>
                                             </div>
                                         </div>
                                     )
