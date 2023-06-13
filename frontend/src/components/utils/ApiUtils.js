@@ -18,6 +18,23 @@ function GetCars(){
     )
 }
 
+// const userId =  JSON.parse(localStorage.getItem("User-id"))
+
+
+// function GetOrders(){
+//     console.log(`${API_BASE_URL}/orders/${userId}`)
+//   return fetch(`${API_BASE_URL}/orders/${userId}`,{
+//     headers:{
+//         "authorization":JSON.parse(localStorage.getItem("token-user"))
+//     }
+//   })
+//   .then(res=>{
+//     console.log(res)
+//     return res.json()
+//   }
+//     )
+// }
+
 
 function GetCar(id){
     return fetch(`${API_BASE_URL}/cars/${id}`,{

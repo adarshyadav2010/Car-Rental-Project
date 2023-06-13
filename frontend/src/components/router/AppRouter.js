@@ -13,6 +13,7 @@ import AddCar from "../admin/adminPage/AddCar";
 import EditCar from "../admin/adminPage/EditCar";
 import Payment from "../user/payment/Payment";
 import UserBookings from "../user/userPage/UserBookings";
+import EditPayment from "../user/payment/EditPayment";
 
 
 export default function AppRouter() {
@@ -37,6 +38,7 @@ export default function AppRouter() {
             <Route path='/edit-car-details' element={<EditCar/>}/>
             <Route path='/payment' element={<Payment/>}/>
             <Route path="/my-bookings" element={<UserBookings/>}/>
+            <Route path="/edit-payment" element={<EditPayment/>}/>
         </Routes>
         
 
