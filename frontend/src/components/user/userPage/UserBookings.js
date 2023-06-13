@@ -26,14 +26,15 @@ export default function UserBookings(){
 
 
     function deleteCarData(id){
-
-        fetch(`https://car-rental-app-server.onrender.com/orders/${id}`, {
+        console.log(id)
+        fetch(`https://car-rent-backend.onrender.com/${id}`, {
 
             method: 'DELETE',
             headers:{
                 "authorization":JSON.parse(localStorage.getItem("token-user"))
             },
         }).then(res => {
+            console.log(res)
             if(res.status === 200){
                 return true
             }
@@ -46,7 +47,7 @@ export default function UserBookings(){
     return(
         <>
         {TokenUser ? <>
-        <div className='home-container'>
+        <div className='admin-container'>
             <UserNav/>
             <div className="admin-page">
                 <h3>My Bookings</h3>

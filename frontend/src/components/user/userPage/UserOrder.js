@@ -39,7 +39,7 @@ export default function UserOrder() {
                                 <img src={`https://car-rent-backend.onrender.com/cars/${cardata.image}`} className="img-container" id="car-img" alt="img-car" />
                             </div>
                             <div className="card-2nd">
-                                <div className="car-details">
+                                <div className="car-details1">
                                     <span>{cardata.name}</span>
                                     <span className="distance-det">{cardata.perkm} KM/RS</span>
                                 </div>
