@@ -60,7 +60,7 @@ export default function NewCar({ data, setData }) {
                 <div className="data-form-flex input-gap-bottom">
                     <div>
                         <label>Available From</label><br />
-                        <input type="date" className="date-input" name="avalableFrom" onChange={(e) => setData({ ...data, availableFrom: e.target.value })} value={availableFrom} />
+                        <input type="date" className="date-input" name="availableFrom" onChange={(e) => setData({ ...data, availableFrom: e.target.value })} value={availableFrom} />
                     </div>
 
                     <div>
