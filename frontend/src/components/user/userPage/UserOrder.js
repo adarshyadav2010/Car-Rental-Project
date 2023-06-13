@@ -12,7 +12,7 @@ export default function UserOrder() {
     let [data, setdata] = useState([])
     useEffect(() => {
 
-        fetch("https://car-rental-app-server.onrender.com/cars/", {
+        fetch("https://car-rent-backend.onrender.com/cars/", {
 
             headers: {
                 "authorization": JSON.parse(localStorage.getItem("token-user "))
@@ -20,6 +20,7 @@ export default function UserOrder() {
         }).then(res => res.json())
             .then(res => setdata(res));
     }, [])
+    data = data.reverse()
     return (
         <>
         {TokenUser?
@@ -35,7 +36,7 @@ export default function UserOrder() {
                     {data.map((cardata, i) => {
                         return <div key={i} className="car-container">
                             <div className="img-container">
-                                <img src={`https://car-rental-app-server.onrender.com/cars/${cardata.image}`} className="img-container" id="car-img" alt="img-car" />
+                                <img src={`https://car-rent-backend.onrender.com/cars/${cardata.image}`} className="img-container" id="car-img" alt="img-car" />
                             </div>
                             <div className="card-2nd">
                                 <div className="car-details">

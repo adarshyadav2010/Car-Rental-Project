@@ -59,7 +59,7 @@ function PaymentCard() {
       body: JSON.stringify(Object)
     }).then(res => res.json())
       .then(data => console.log(data));
-
+      navigate("/ExistBookings")
 
 
   };
