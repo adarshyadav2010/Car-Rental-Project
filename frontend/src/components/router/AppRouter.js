@@ -12,7 +12,7 @@ import UserOrder from "../user/userPage/UserOrder";
 import AddCar from "../admin/adminPage/AddCar";
 import EditCar from "../admin/adminPage/EditCar";
 import Payment from "../user/payment/Payment";
-// import BookNow from "../user/userPage/bookNow";
+import UserBookings from "../user/userPage/UserBookings";
 
 
 export default function AppRouter() {
@@ -36,6 +36,7 @@ export default function AppRouter() {
             <Route path='/add-car-details' element={<AddCar/>}/>
             <Route path='/edit-car-details' element={<EditCar/>}/>
             <Route path='/payment' element={<Payment/>}/>
+            <Route path="/my-bookings" element={<UserBookings/>}/>
         </Routes>
         
 

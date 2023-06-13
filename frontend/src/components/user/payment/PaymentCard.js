@@ -59,7 +59,7 @@ function PaymentCard() {
       body: JSON.stringify(Object)
     }).then(res => res.json())
       .then(data => console.log(data));
-      navigate("/ExistBookings")
+      navigate("/my-bookings")
 
 
   };
@@ -82,7 +82,7 @@ function PaymentCard() {
                   <li className='ans-of-the-file-payment-in-data-of-file'>{CarData.model}</li>
                 </div>
                 <div className="image-of-car-in-rental-payment">
-                  <img src={`https://car-rental-app-server.onrender.com/cars/${CarData.image}`} alt="not availble" className='img' />
+                  <img src={`https://car-rent-backend.onrender.com/cars/${CarData.image}`} alt="not availble" className='img' />
                 </div>
               </div>
             </div>
