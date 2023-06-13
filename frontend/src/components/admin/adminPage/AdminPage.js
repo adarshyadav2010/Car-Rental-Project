@@ -66,7 +66,7 @@ export default function AdminPage() {
                                                         }
                                                         else {
                                                             console.log(data.AdminId)
-                                                            setEdit(d);
+                                                            setEdit(data);
                                                             navigate("/edit-car-details")
                                                         }
 
