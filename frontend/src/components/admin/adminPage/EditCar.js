@@ -2,21 +2,47 @@ import React, { useContext, useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import AdminNav from "../../navbar/AdminsNav"
 import { StateContextsData } from "../../context/StateContext"
+import {deleteCar} from "../../utils/ApiUtils"
 import Backdrop from '@mui/material/Backdrop';
 import CircularProgress from '@mui/material/CircularProgress';
 import '../../styles/styles.css'
+import HomePage from "../../homePage/HomePage";
 
 
 export default function EditCar() {
-    const {setCars,edit,setEdit,cars } = useContext(StateContextsData);
+    const {setCar,edit,setEdit,car } = useContext(StateContextsData);
     const [file , setFile] = useState("");
     const navigate = useNavigate();
 
     function onSubmitEdit(e){
         e.preventDefault()
+        const EditformData = new FormData(e.target)
+
+      fetch(`https://car-rent-backend.onrender.com/cars/${edit._id}` , {
+        method:"PUT",
+        headers:{
+            "authorization":JSON.parse(localStorage.getItem("token-admin")),
+            
+        },
+        body:EditformData
+      }).then(res=>res.json())
+      .then(data=>setCar(e=>{
+      return e.map(d=>{
+        if(d._id===data._id){
+            return data
+        }
+        return d;
+      })                    
+    }))
+   navigate("/admin-page");
+
     }
+    const TokenAdmin= JSON.parse(localStorage.getItem("token-admin"))
+    const AdminId = JSON.parse(localStorage.getItem("Admin-Id"));
+
     return (
         <div className='addcar-container'>
+            {TokenAdmin ? <>
             <AdminNav />
                 <div className="addcar-page">
                     <h4 className="heading-admin">Edit Car Details</h4>
@@ -117,8 +143,8 @@ export default function EditCar() {
         </div>
         <div className="input-gap-bottom " id="btn-cancel-add-detail-container">
              <button id="btn-cancel-add-detail" onClick={()=>navigate("/admin-page")} >Cancel</button>
-             <button className="btn-Add-add-detail-ans-save" id="delete-btn-for-edit-page" onClick={()=>{}}>Delete</button>
-             <button className="btn-Add-add-detail-ans-save save-btn-details" >save</button>
+             <button className="btn-Add-add-detail-ans-save" id="delete-btn-for-edit-page" onClick={()=>{deleteCar(edit._id);}}>Delete</button>
+             <button className="btn-Add-add-detail-ans-save save-btn-details" type="submit">save</button>
         </div>
                     </form>
                     <Backdrop
@@ -127,6 +153,8 @@ export default function EditCar() {
                         <CircularProgress color="inherit" />
                     </Backdrop>
                 </div>
+            </>:<HomePage/>
+            }
         </div>
     )
 }
