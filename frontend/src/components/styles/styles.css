@@ -470,3 +470,20 @@ input:focus, textarea:focus{
     padding-bottom: 30px;
     padding-left: 50px;
 }
+
+#display-message-on-the-admin-pag-for-the-err{
+    text-align: center;
+    border: 2px solid red;
+    width: 30%;
+    margin-left: 35%;
+    font-weight: bold;
+    border-radius: 5px;
+    color: red;
+}
+#button-ok-for-th-delee-things{
+    border: 2px solid red;
+    margin-left:20px;
+    background-color: red;
+    padding: 1px;
+    color: aliceblue;
+}
