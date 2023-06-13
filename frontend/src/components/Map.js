@@ -28,7 +28,9 @@ function Map(props) {
       const script = document.createElement("script");
       script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyAppNv_hKiqWizwpVnzD4j8xCH1YY8VqsE&libraries=places`;
       script.async = true;
-      script.onload = loadMap;
+      script.onload = ()=>{
+        loadMap()
+      };
       document.body.appendChild(script);
     }
   }, []);
