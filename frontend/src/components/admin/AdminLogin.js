@@ -80,7 +80,7 @@ function AdminLogin() {
 
                     <div className="login-signup">
                         <Link to='/admin/register' ><span >Create Account</span></Link>
-                        <button type='submit' onClick={onSubmitData} className="save-details">Sign In</button>
+                        <button type='submit'className="save-details">Sign In</button>
                     </div>
                 </form>
                 <ToastContainer

@@ -13,9 +13,11 @@ const orderRegisterCtrl = async (req, res) => {
 
 
 const getOrdersCtrl = async (req, res) => {
+  console.log(req.params.id)
     try {
       const UserId= req.params.id
       const allOrders = await Orders.find({userId:UserId});
+      console.log(allOrders)
       res.status(200).json({
         status: "success",
         data: allOrders,
@@ -33,8 +35,14 @@ const getOrdersCtrl = async (req, res) => {
 const deleteOrderCtrl= async(req,res)=>{
 try {
   const _id=req.params.id;
-  const deletedData = await Orders.findByIdAndDelete(_id);
-  res.send(deletedData)
+  await Orders.findOne({_id}).then(data=>{
+    console.log(data)
+    res.status(200).send({status:'success',
+        record:data})
+  }).catch(err=>{
+    res.status(400).send({message:err.message})
+  });
+  
 } catch (error) {
   res.status(400).send({message:error.message})
 }

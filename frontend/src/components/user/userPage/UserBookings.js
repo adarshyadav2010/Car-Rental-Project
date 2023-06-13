@@ -11,26 +11,30 @@ export default function UserBookings(){
     const navigate = useNavigate()
     const {Bookdata,setBookData, setEditPaymentDetails, headerData}=useContext(StateContextsData);
    const TokenUser= JSON.parse(localStorage.getItem("token-user"))
-    const userId=JSON.parse(localStorage.getItem("user-id"))
+    const userId=JSON.parse(localStorage.getItem("userId"))
     useEffect(()=>{
-
-     fetch(`https://car-rental-app-server.onrender.com/orders/${userId}`)
-
-        .then(res=>res.json())
-        .then(data=>setBookData((data.data).reverse()))
+        console.log(userId)
+     fetch(`https://car-rent-backend.onrender.com/orders/${userId}`)
+        .then(res=>{
+            console.log(res)
+            return res.json()})
+        .then(data=>{
+            console.log(data)
+            return setBookData((data.data).reverse())})
     },[])
-    console.log(Bookdata)
+    // console.log(Bookdata)
 
 
     function deleteCarData(id){
-
-        fetch(`https://car-rental-app-server.onrender.com/orders/${id}`, {
+        console.log(id)
+        fetch(`https://car-rent-backend.onrender.com/${id}`, {
 
             method: 'DELETE',
             headers:{
                 "authorization":JSON.parse(localStorage.getItem("token-user"))
             },
         }).then(res => {
+            console.log(res)
             if(res.status === 200){
                 return true
             }
@@ -43,7 +47,7 @@ export default function UserBookings(){
     return(
         <>
         {TokenUser ? <>
-        <div className='home-container'>
+        <div className='admin-container'>
             <UserNav/>
             <div className="admin-page">
                 <h3>My Bookings</h3>

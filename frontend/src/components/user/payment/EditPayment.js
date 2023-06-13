@@ -39,7 +39,7 @@ export default function EditPayment() {
     function editformsubmitFunc(e) {
         e.preventDefault();
 
-        fetch(`https://car-rental-app-server.onrender.com/orders/${EditPaymentDetails._id}`, {
+        fetch(`https://car-rent-backend.onrender.com/orders/${EditPaymentDetails._id}`, {
 
             method: "PATCH",
             headers: {
