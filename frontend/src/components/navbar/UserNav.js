@@ -15,7 +15,7 @@ export default function UserNav(){
                         <Link to='/my-bookings' className='text'><span className='text'>My Bookings</span></Link>
                     </div>
                     <div className='user-logout'>
-                    <Link to = "/"><button className='log-out'> LogOut</button></Link>
+                    <Link to = "/"><button className='log-out' onClick={()=>localStorage.clear()}> LogOut</button></Link>
                     </div>
                 </div>
                 
