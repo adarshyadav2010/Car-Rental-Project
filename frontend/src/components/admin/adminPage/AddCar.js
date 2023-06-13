@@ -22,13 +22,16 @@ export default function AddCar() {
         perKm:"",
         description:"",
         carDetails:"",
-        Details:""
+        Details:"",
+        AdminId: ""
       })
       const [loader , setLoader] = useState(false);
       const TokenAdmin= JSON.parse(localStorage.getItem("token-admin"))
-    function submitFunction(e){
+      function submitFunction(e){
         e.preventDefault()
         const newformData = new FormData(e.target)
+        const AdminId = JSON.parse(localStorage.getItem("Admin-Id"))
+        newformData.append("AdminId", AdminId)
         console.log(newformData)
         addCar(newformData).then(data=>{
             setCar(d=>{
@@ -51,6 +54,7 @@ export default function AddCar() {
           navigator1("/admin-page")
        })
     }
+
     return (
         <div className='addcar-container'>
             { TokenAdmin? <>
@@ -61,7 +65,7 @@ export default function AddCar() {
                         <NewCar data={data} setData={setData}/>
                         <div className="input-gap-bottom " id="btn-cancel-add-detail-container">
                             <button id="btn-cancel-add-detail" onClick={() => navigator1("/admin-page")}>Cancel</button>
-                            <button id="btn-Add-add-detail-ans-save" onClick={() => setLoader(true)}>Add</button>
+                            <button id="btn-Add-add-detail-ans-save" onClick={() => setLoader(true)} type="submit">Add</button>
                         </div>
                     </form>
                     <Backdrop

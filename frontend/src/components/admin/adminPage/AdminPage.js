@@ -20,7 +20,8 @@ export default function AdminPage() {
             return navigate("/")
         }
         GetCars()
-            .then(data => setCar(data.reverse()))
+            .then(data => {
+                setCar(data.reverse())})
     }, []
     );
 
@@ -57,7 +58,7 @@ export default function AdminPage() {
                                     return (
                                         <div key={i} className="car-container" >
                                             <div className="img-container">
-                                                <img src={`https://car-rent-backend.onrender.comcars/${data.image}`} id="car-img" alt="img-car"
+                                                <img src={`https://car-rent-backend.onrender.com/cars/${data.image}`} id="car-img" alt="img-car"
                                                     onClick={() => {
                                                         if (AdminId !== data.AdminId) {
                                                             console.log(data.AdminId)
@@ -83,7 +84,7 @@ export default function AdminPage() {
                                             <hr />
                                             <div className="date-details">
                                                 <span >Available Date</span>
-                                                <span >{data.availableFrom.split("-").reverse().join("/").slice(0,5)}-{data.availableTill.split("-").reverse().join("/").slice(0,5)}</span>
+                                                <span >{data.availableFrom}-{data.availableTill}</span>
                                             </div>
                                         </div>
                                     )

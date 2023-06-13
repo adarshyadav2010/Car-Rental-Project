@@ -1,14 +1,21 @@
 
 const API_BASE_URL= 'https://car-rent-backend.onrender.com';
+// const AdminId = JSON.parse(localStorage.getItem("Admin-Id"))
 
 
 function GetCars(){
+    console.log(`${API_BASE_URL}/cars`)
+
   return fetch(`${API_BASE_URL}/cars`,{
     headers:{
         "authorization":JSON.parse(localStorage.getItem("token-admin"))
     }
   })
-  .then(res=>res.json())
+  .then(res=>{
+    console.log(res)
+    return res.json()
+  }
+    )
 }
 
 

@@ -12,20 +12,34 @@ const Admin = require("../model/adminModel");
 
 // ********get Image **********************//
 let client = new MongoClient(process.env.DB_URL);
+// const getImages = async (req, res) => {
+//     try {
+//       await client.connect();
+//       const datastore = client.db(process.env.DATABASE);
+//       const bucket = new GridFSBucket(datastore, { bucketName: process.env.CAR_IMAGES });
+//       const downloadStream = bucket.openDownloadStreamByName(req.params.image);
+//       downloadStream.pipe(res);
+//     } catch (error) {
+//       res.status(400).json({ message: error.message });
+//     }
+//   };
+
+
 const getImages = async(req,res)=>{
     try {
         await client.connect();
         const datastore = client.db(process.env.DATABASE);
-        const Bucket = new GridFSBucket(datastore,{bucketName:process.env.CAR_IMAGES});
+        const Bucket = new GridFSBucket(datastore,{bucketName: process.env.CAR_IMAGES});
         const eventVar= Bucket.openDownloadStreamByName(req.params.image);
         eventVar.on("data",(data)=>{
-            return res.write(data)
+            console.log(data)
+            res.write(data)
           })
           eventVar.on("error" ,(err)=>{
-          return  res.status(400).write(err)
+            res.status(400).write(err)
           })
           eventVar.on("end",()=>{
-            return res.end()
+            res.end()
           })
         
     } catch (error) {
@@ -39,6 +53,7 @@ const getCars = async(req,res)=>{
     try {
         if(req.headers.authorization){
             const readData = await carDetails.find();
+            console.log(readData)
             res.send(readData)
         }
      
@@ -51,8 +66,10 @@ const getCars = async(req,res)=>{
 
 const PostCars =  async(req, res)=>{
     try{
+        // console.log(req.headers.authorization)
         if(req.headers.authorization){
             let userVar = jwt.verify(req.headers.authorization, ENCRYPTION_SECRET)//id  //
+            console.log(userVar)
             let data = new carDetails({image:req.file.filename,AdminId:userVar._id,...req.body});
             let createData = await data.save();
             res.status(201).send(createData)
@@ -60,7 +77,11 @@ const PostCars =  async(req, res)=>{
             res.status(404).send({message:"Unothorized User"})
         }
     }catch(err){
-        res.status(400).json({message:err.message})
+        console.log(err)
+        res.status(400).send({
+            message:err.message
+
+        })
     }
 }
 
@@ -129,6 +150,8 @@ const deleteCarData =  async(req,res)=>{
 const GetDataByAdminId = async(req,res)=>{
     try{
         const  AdminId= req.params.id;
+        console.log(AdminId)
+        console.log(req.headers.authorization)
        if(req.headers.authorization){
             const readData = await carDetails.find({AdminId:AdminId});
             res.send(readData)

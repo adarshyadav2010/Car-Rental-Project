@@ -34,7 +34,7 @@ export default function StateContexts({ children }) {
         perKm: "",
         description: "",
         carDetails: "",
-        Details: ""
+        Details: "",
     });
 
     const [EditPaymentDetails , setEditPaymentDetails] = useState({})
